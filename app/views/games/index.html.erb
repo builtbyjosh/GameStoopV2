@@ -1,5 +1,9 @@
 <h1>Games View</h1>
 
+<%= link_to 'FPS', games_fps_path%>
+<%= link_to 'Strategy', games_strategy_path %>
+<%= link_to 'Simulation', games_simulation_path %>
+<%= link_to 'Platformer', games_platformer_path %>
 
 <ul>
 <% @games.each do |game| %>
