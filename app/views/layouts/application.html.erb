@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GameStoopV2</title>
+    <title>GameStoop</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="/app/assets/stylesheets/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
   </head>
 
   <body>
+  <div>
+    <nav >
+    <% if logged_in? %>
+      <%= link_to 'Home', user_path(session[:user_id]) %>
+      <%= link_to 'Log Out', logout_path, method:'delete' %>      
+      <%= link_to 'View Games', games_path %>
+    <% else %>
+      <%= link_to 'Login', login_path %> <%= link_to 'Sign Up', signup_path %>
+    <% end %>  
+  </nav>
+  </div>
+
+  
+  <div class="border">
+    
     <%= yield %>
+  </div>
+   
   </body>
 </html>

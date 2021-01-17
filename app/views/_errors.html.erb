@@ -1,3 +1,5 @@
-<% record.errors.full_messages.each do |error| %>
-    <p><i><%= error %></i></p>
+<% flash.each do |type, msg| %>
+  <div>
+    <p><%= msg %></p>
+  </div>
 <% end %>

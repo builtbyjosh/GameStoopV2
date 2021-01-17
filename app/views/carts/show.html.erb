@@ -1,1 +1,9 @@
 <h1>Show Cart</h1>
+<%= @cart.user.username %>
+<% @cart.line_items.each do |line_item| %>
+<p><strong>Game:</strong> <%= line_item.game.name %></p>
+
+<p><strong>Price:</strong> $<%= line_item.game.price %></p>
+<% end %>
+
+<p><strong>Total:</strong> $<%= @cart.cart_total %></p>

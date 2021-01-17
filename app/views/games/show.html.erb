@@ -1,3 +1,6 @@
+<%= render partial: '/errors', locals: { record: @line_item} %>
+
+<%= link_to 'Back', games_path %>
 <h1>Game Show Page</h1>
 <h3><%= @game.name %></h3>
 <ul>
@@ -5,3 +8,11 @@
     <li>Genre: <%= @game.genre %></li>
     <li>Price: $<%= @game.price %></li>
 </ul>
+
+<%= form_for @line_item  do |f|%>
+<%= f.hidden_field :cart_id, value: current_cart.id %>
+<%= f.hidden_field :game_id, value: @game.id %>
+<%= f.number_field :quantity, value: 1, :min =>  1%>
+<%= f.submit "Add to Cart "%>
+<% end %>
+

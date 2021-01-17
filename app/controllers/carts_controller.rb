@@ -1,10 +1,18 @@
 class CartsController < ApplicationController
     def index
-        @carts = Cart.all 
+        @carts = Cart.all
+        current_user
     end
 
     def show
-        @cart = Cart.find(params[:id])
+        @cart = current_cart
+    end
+
+    def destroy
+        @cart = @current_cart
+        @cart.destroy
+        session[:cart_id] = nil
+        redirect_to root_path
     end
 
     def new
@@ -12,7 +20,7 @@ class CartsController < ApplicationController
     end
 
     def create
-        @cart = Cart.new(cart_params)
+        @cart = Cart.new
         if @cart.save
             redirect_to new_cart_line_item_path(@cart)
         else

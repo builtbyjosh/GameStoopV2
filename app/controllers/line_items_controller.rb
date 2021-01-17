@@ -11,27 +11,22 @@ class LineItemsController < ApplicationController
   end
 
   def new
-    set_cart
-    redirect_to carts_path if !@cart
     @line_item = LineItem.new
   end
 
   def create
-    @cart = Cart.find_by(id: params[:line_item][:cart_id])
-    @line_item = LineItem.new(line_item_params)
-    if @line_item.save
+    @cart = current_cart
+    @line_item = @cart.line_items.new(line_item_params)
 
-      redirect_to cart_line_items_path(@line_item.cart)
+    if @line_item.save      
+      redirect_to user_cart_path(@cart, current_user.id)
+      
     else      
-      render :new
+      render template: 'games/show'
     end
   end
 
   private
-
-  def set_cart
-    @cart ||= Cart.find_by(id: params[:cart_id])
-  end
 
   def line_item_params
     params.require(:line_item).permit(:cart_id, :game_id, :quantity)

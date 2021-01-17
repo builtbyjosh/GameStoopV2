@@ -4,7 +4,7 @@ class GamesController < ApplicationController
     end
 
     def show
-        
+        @line_item = LineItem.new
         @game = Game.find_by(id: params[:id])
     end
 

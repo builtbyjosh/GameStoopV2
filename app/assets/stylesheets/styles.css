@@ -1,0 +1,35 @@
+body {
+    background-image: url('https://t4.ftcdn.net/jpg/02/51/22/61/360_F_251226130_PkoJLASY5b4Hm31wXwMfBmhP0BHunYC2.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Syne Mono';
+}
+nav {
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 5px;
+    border-color: black;
+    background-color: white;
+    padding: 15px;    
+    margin-left: 50px;
+    margin-bottom: 10px;
+    font-family: 8bit;
+    display: inline-block;
+
+}
+.border {
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 5px;
+    border-color: black;
+    background-color: white;
+    padding: 15px;    
+    margin-left: 50px;
+    margin-bottom: 10px;
+    font-family: 8bit;
+    display: inline-block;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
