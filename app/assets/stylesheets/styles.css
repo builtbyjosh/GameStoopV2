@@ -5,18 +5,17 @@ body {
     background-size: cover;
     font-family: 'Syne Mono';
 }
-nav {
-    border-style: solid;
-    border-radius: 10px;
-    border-width: 5px;
-    border-color: black;
-    background-color: white;
-    padding: 15px;    
-    margin-left: 50px;
-    margin-bottom: 10px;
-    font-family: 8bit;
-    display: inline-block;
-
+.nav-bar {
+    display: block;
+}
+.nav-left{
+    float: left;
+}
+.nav-right{
+    float: right;
+}
+.yield{
+    float: left;
 }
 .border {
     border-style: solid;

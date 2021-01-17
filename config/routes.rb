@@ -38,4 +38,5 @@ Rails.application.routes.draw do
     # nested routes
     resources :line_items, only: [:new, :create]
   end  
+  get '/checkout', to: 'carts#checkout'
 end
