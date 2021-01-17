@@ -6,7 +6,7 @@ class Cart < ApplicationRecord
 
     def cart_total
         self.line_items.sum do |item|
-            item.game.price
+            item.subtotal
         end
     end
 end

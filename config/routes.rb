@@ -28,7 +28,10 @@ Rails.application.routes.draw do
     resources :carts, only: [:show]
   end
 
-  resources :line_items, only: [:create, :index]
+  resources :line_items, only: [:create, :destroy]
+
+
+
   resources :games, only: [:index, :show]
 
   resources :carts, only: [:new, :create, :index] do

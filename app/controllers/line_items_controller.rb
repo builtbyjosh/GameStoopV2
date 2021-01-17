@@ -1,9 +1,6 @@
 class LineItemsController < ApplicationController
   def index
-    #binding.pry
-    @line_items = LineItem.all 
-    
-    set_cart
+    @line_items = LineItem.all
   end
 
   def show
@@ -15,15 +12,20 @@ class LineItemsController < ApplicationController
   end
 
   def create
-    @cart = current_cart
-    @line_item = @cart.line_items.new(line_item_params)
+    @line_item = current_cart.line_items.new(line_item_params)
 
-    if @line_item.save      
-      redirect_to user_cart_path(@cart, current_user.id)
-      
+    if @line_item.save
+      redirect_to user_cart_path(current_cart.id, current_user.id)      
     else      
-      render template: 'games/show'
+      redirect_to games_path
     end
+  end
+
+  def destroy
+    @cart = current_cart
+    @line_item = @cart.line_items.find(params[:id])
+    @line_item.destroy
+    redirect_to user_cart_path(current_cart.id, current_user.id)
   end
 
   private

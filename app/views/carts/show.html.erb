@@ -2,8 +2,12 @@
 <%= @cart.user.username %>
 <% @cart.line_items.each do |line_item| %>
 <p><strong>Game:</strong> <%= line_item.game.name %></p>
-
+<p><strong>Quantity:</strong> $<%= line_item.quantity %></p>
 <p><strong>Price:</strong> $<%= line_item.game.price %></p>
+<p><strong>Subtotal:</strong> $<%= line_item.subtotal %></p>
+<%= link_to "Remove From Cart", line_item_path(line_item), method: :delete %>
+<br>
 <% end %>
 
 <p><strong>Total:</strong> $<%= @cart.cart_total %></p>
+
