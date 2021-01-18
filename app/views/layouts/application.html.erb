@@ -29,11 +29,15 @@
       <% end %> 
       <%= link_to 'View Games', games_path %> 
     </nav>
-
   </div>
 
   
-  <div class="border">    
+  <div class="border">
+    <% flash.each do |type, msg| %>
+      <div>
+        <%= msg %>
+      </div>
+    <% end %>    
     <%= yield %>
   </div>
   

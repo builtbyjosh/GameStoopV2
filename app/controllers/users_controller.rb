@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    
+    before_action :require_login
 
     def show
         if current_user.id == params[:id].to_i
