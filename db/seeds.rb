@@ -15,4 +15,4 @@ Game.create(name: "Farming Simulator 19", description: "Run your own farm", pric
 Game.create(name: "Hitman", description: "Stealth First Person Shooter", price: 25, genre: "fps")
 Game.create(name: "Hitman 2", description: "Stealth First Person Shooter", price: 35, genre: "fps")
 Game.create(name: "Hitman 3", description: "Stealth First Person Shooter", price: 45, genre: "fps")
-Game.create(name: "Call of Duty", description: "First Person Shooter", price: 15, genre: "fps")
+Game.create(name: "Call of Duty", description: "First Person Shooter", price: 15, genre: "fps")AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
