@@ -1,10 +1,5 @@
 class CartsController < ApplicationController
     before_action :require_login
-    
-    def index
-        @carts = Cart.all
-        current_user
-    end
 
     def show        
         if logged_in?            
@@ -12,17 +7,6 @@ class CartsController < ApplicationController
         else
             require_login
         end  
-    end
-
-    def destroy
-        @cart = @current_cart
-        @cart.destroy
-        session[:cart_id] = nil
-        redirect_to root_path
-    end
-
-    def new
-        @cart = Cart.new
     end
 
     def create
@@ -33,8 +17,6 @@ class CartsController < ApplicationController
             render :new
         end
     end
-
-
 
     private
 

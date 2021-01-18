@@ -33,7 +33,7 @@ Rails.application.routes.draw do
 
   resources :games, only: [:index, :show]
 
-  resources :carts, only: [:new, :create, :index] do
+  resources :carts, only: [:create] do
     # nested routes
     resources :line_items, only: [:new, :create]
   end  
