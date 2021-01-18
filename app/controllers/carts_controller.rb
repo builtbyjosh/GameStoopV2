@@ -6,12 +6,8 @@ class CartsController < ApplicationController
         current_user
     end
 
-    def show        
-        if logged_in?            
-            redirect_to user_cart_path(current_user, current_cart) unless current_cart.id == params[:id].to_i            
-        else
-            require_login
-        end  
+    def show
+        redirect_to user_cart_path(current_user, current_cart) unless current_cart.id == params[:id].to_i
     end
 
     def destroy
