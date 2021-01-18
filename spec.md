@@ -13,10 +13,15 @@ Specs:
 - [x] The "through" part of the has_many through includes at least one user submittable attribute, that is to say, some attribute other than its foreign keys that can be submitted by the app's user (attribute_name e.g. ingredients.quantity)
     - The user selects the quantity on the line item
 - [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
+    - There are user creation validations for uniquiness and presence.
 - [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+    - Several scope methods on the game model to search for certain game genres.
 - [x] Include signup (how e.g. Devise)
+    - Made through the sessions controller
 - [x] Include login (how e.g. Devise)
+    - Made through the sessions controller
 - [x] Include logout (how e.g. Devise)
+    - Made through the sessions controller
 - [ ] Include third party signup/login (how e.g. Devise/OmniAuth)
 - [x] Include nested resource show or index (URL e.g. users/2/recipes)
 - [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
