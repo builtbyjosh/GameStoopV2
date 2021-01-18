@@ -24,6 +24,7 @@ Specs:
     - Made through the sessions controller
 - [ ] Include third party signup/login (how e.g. Devise/OmniAuth)
 - [x] Include nested resource show or index (URL e.g. users/2/recipes)
+    - cart view is nested under the user route (users/:user_id/carts/:cart_id)
 - [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
 - [x] Include form display of validation errors (form URL e.g. /recipes/new)
 
