@@ -1,4 +1,6 @@
 class CartsController < ApplicationController
+    before_action :require_login
+    
     def index
         @carts = Cart.all
         current_user
