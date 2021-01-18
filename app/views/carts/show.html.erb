@@ -1,6 +1,6 @@
 <h1>Show Cart</h1>
-<%= @cart.user.username %>
-<% @cart.line_items.each do |line_item| %>
+<%= current_cart.user.username %>
+<% current_cart.line_items.each do |line_item| %>
 <p><strong>Game:</strong> <%= line_item.game.name %></p>
 <p><strong>Quantity:</strong> $<%= line_item.quantity %></p>
 <p><strong>Price:</strong> $<%= line_item.game.price %></p>
@@ -9,5 +9,5 @@
 <br>
 <% end %>
 
-<p><strong>Total:</strong> $<%= @cart.cart_total %></p>
+<p><strong>Total:</strong> $<%= current_cart.cart_total %></p>
 <%= link_to "Checkout", checkout_path %>
