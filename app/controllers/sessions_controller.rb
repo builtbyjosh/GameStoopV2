@@ -1,13 +1,13 @@
 class SessionsController < ApplicationController
     def signup
-      @user = User.new
+      new_user
     end
   
     def create
       @user = User.new(user_params)
       if @user.save
         flash[:notice] = "success"
-        session[:user_id] = @user.id
+        set_user(@user)
         redirect_to user_path(@user)
       else
         flash[:errors] = @user.errors.full_messages
@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
     def new
       @user = User.find_by(email: params[:user][:email])
       if @user && @user.authenticate(user_params[:password])
-        session[:user_id] = @user.id
+        set_user(@user)
         current_cart
         redirect_to user_path(@user)
       else
@@ -46,5 +46,9 @@ class SessionsController < ApplicationController
 
     def new_user
         @user = User.new
+    end
+
+    def set_user(user)
+      session[:user_id] = user.id
     end
   end
