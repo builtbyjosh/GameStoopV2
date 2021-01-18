@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   # session routes
   get '/login', to: 'sessions#login'
-  post '/success', to: 'sessions#new'
+  post '/success', to: 'sessions#success'
   
   get '/signup', to: 'sessions#signup'
   post '/create', to: 'sessions#create'

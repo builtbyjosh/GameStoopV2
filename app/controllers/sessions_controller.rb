@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
       new_user
     end
   
-    def new
+    def success
       @user = User.find_by(email: params[:user][:email])
       if @user && @user.authenticate(user_params[:password])
         set_user(@user)

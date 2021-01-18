@@ -23,8 +23,8 @@ class ApplicationController < ActionController::Base
       !!current_user
     end
 
-    def require_login
-      flash[:errors] = "Please Sign up or Login first"
+    def require_login      
       redirect_to root_path unless logged_in?
+      flash[:errors] = "Please Sign up or Login first"
     end
 end
