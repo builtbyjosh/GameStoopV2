@@ -1,0 +1,7 @@
+<ul>
+    <% current_user.carts.each do |cart| %>
+        <% cart.line_items.each do |line_item| %>
+            <li><%=line_item.game.name%></li>
+        <%end%>
+    <%end%>
+</ul>
