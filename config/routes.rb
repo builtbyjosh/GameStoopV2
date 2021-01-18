@@ -20,19 +20,12 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#logout'
   get '/checkout', to: 'sessions#checkout'
   
-
-
-  
   resources :users, only: [:show] do
+    # nested routes
     resources :carts, only: [:show]
   end
-
   resources :line_items, only: [:create, :destroy]
-
-
-
   resources :games, only: [:index, :show]
-
   resources :carts, only: [:create] do
     # nested routes
     resources :line_items, only: [:new, :create]

@@ -9,15 +9,6 @@ class CartsController < ApplicationController
         end  
     end
 
-    def create
-        @cart = Cart.new
-        if @cart.save
-            redirect_to new_cart_line_item_path(@cart)
-        else
-            render :new
-        end
-    end
-
     private
 
     def cart_params
