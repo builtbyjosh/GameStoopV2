@@ -36,6 +36,11 @@ class SessionsController < ApplicationController
       session.clear
       redirect_to root_path
     end
+
+    def checkout
+      @cart = current_cart
+      session.delete(:cart_id)
+    end
   
   
     private

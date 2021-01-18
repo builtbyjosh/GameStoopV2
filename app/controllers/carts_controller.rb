@@ -30,11 +30,7 @@ class CartsController < ApplicationController
         end
     end
 
-    def checkout
-        @cart = current_cart
-        session.delete(:cart_id)
-        binding.pry
-    end
+
 
     private
 
