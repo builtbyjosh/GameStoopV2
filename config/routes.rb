@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   # OmniAuth
   
   post '/auth/:github/callback' => 'sessions#success'
+  get '/auth/:github/callback' => 'sessions#success'
   # devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   # devise_for :users, path: "auth", :controllers => {sessions: 'sessions', registrations: 'registrations', confirmations: 'confirmations', passwords: 'passwords', omniauth_callbacks: 'users/omniauth_callbacks'}
 
