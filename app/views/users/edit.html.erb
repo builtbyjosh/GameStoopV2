@@ -1,0 +1,12 @@
+<h1>Changing <%=current_user.username %>'s Profile</h1>
+
+<% form_for(current_user), url: '/edit' do |f| %>
+    <%= f.label :email %>
+    <%= f.text_field :email%>
+    <br>
+    <%= f.label :password %>
+    <%= f.password_field :password%>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+    <%= f.submit "Create New Player" %>
+<% end %>

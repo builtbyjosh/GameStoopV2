@@ -1,7 +1,0 @@
-<h1>Line Items for Cart: <%= current_cart.id %></h1>
-<%= link_to 'Add New Line Item', new_cart_line_item_path(@cart) %>
-<ul>
-    <% @line_items.each do |line_item| %>
-        <li>Game: <%= line_item.game.name %> - Quantity: <%= line_item.quantity %></li>
-    <% end %>
-</ul>
