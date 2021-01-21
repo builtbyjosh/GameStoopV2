@@ -39,5 +39,5 @@ Rails.application.routes.draw do
   get '/games/platformer', to: 'games#platformer'
 
   # OmniAuth
-  post '/auth/github/callback', to: 'sessions#create'
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 end
