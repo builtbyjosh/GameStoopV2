@@ -1,8 +1,8 @@
 
 
-<%= link_to 'Back', games_path %>
-<h1>Game Show Page</h1>
-<h3><%= @game.name %></h3>
+
+
+<h1><%= @game.name %></h1>
 <ul>
     <li>Desc: <%= @game.description %></li>
     <li>Genre: <%= @game.genre %></li>
@@ -15,4 +15,5 @@
         <%= f.submit "Add to Cart "%>
     <% end %>
 <% end %>
+<%= button_to 'Back to Games', games_path %>
 
