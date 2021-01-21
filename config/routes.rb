@@ -38,5 +38,6 @@ Rails.application.routes.draw do
   get '/games/simulation', to: 'games#simulation'
   get '/games/platformer', to: 'games#platformer'
 
-  
+  # OmniAuth
+  post '/auth/github/callback', to: 'sessions#create'
 end
