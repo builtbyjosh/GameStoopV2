@@ -9,6 +9,11 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   
   root 'sessions#welcome'
+  # OmniAuth
+  
+  post '/auth/:github/callback' => 'sessions#success'
+  # devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  # devise_for :users, path: "auth", :controllers => {sessions: 'sessions', registrations: 'registrations', confirmations: 'confirmations', passwords: 'passwords', omniauth_callbacks: 'users/omniauth_callbacks'}
 
   # session routes
   get '/login', to: 'sessions#login'
@@ -38,7 +43,5 @@ Rails.application.routes.draw do
   get '/games/simulation', to: 'games#simulation'
   get '/games/platformer', to: 'games#platformer'
 
-  # OmniAuth
-  # devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  # devise_for :users, path: "auth", :controllers => {sessions: 'sessions', registrations: 'registrations', confirmations: 'confirmations', passwords: 'passwords', omniauth_callbacks: 'users/omniauth_callbacks'}
+  
 end
