@@ -39,5 +39,6 @@ Rails.application.routes.draw do
   get '/games/platformer', to: 'games#platformer'
 
   # OmniAuth
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  # devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  # devise_for :users, path: "auth", :controllers => {sessions: 'sessions', registrations: 'registrations', confirmations: 'confirmations', passwords: 'passwords', omniauth_callbacks: 'users/omniauth_callbacks'}
 end
