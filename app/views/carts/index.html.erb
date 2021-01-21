@@ -1,9 +1,0 @@
-<h1>Carts View</h1>
-
-<%= link_to "Create New Cart", new_cart_path %>
-
-<ul>
-<% @carts.each do |cart| %>
-<li><%= cart.id %> - <%= cart.total %></li>
-<% end %>
-</ul>
