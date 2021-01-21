@@ -2,7 +2,8 @@
 
 <h1>Player <%=@user.username%>'s Home Page</h1>
 
-<p>edit your profile</p>
+<%=<%= link_to 'Edit Your Profile', user_edit_path(current_user) %>%>
+
 
 <p>Your Game Library</p>
 <%= render partial: '/users/game_library' %>
