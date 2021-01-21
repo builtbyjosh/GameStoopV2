@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   delete '/logout', to: 'sessions#logout'
   get '/checkout', to: 'sessions#checkout'
+  post '/checkout', to: 'sessions#checkout'
   
   resources :users, only: [:show] do
     # nested routes

@@ -1,2 +1,4 @@
 <p>Thank you <%= current_user.username %> for your purchase!</p>
-<p>Your total was: <%=@cart.cart_total%></p>
+<p>Your total was: $<%=@cart.cart_total%></p>
+
+<%= link_to 'Home', user_path(current_user)%>
