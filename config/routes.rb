@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get '/checkout', to: 'sessions#checkout'
   post '/checkout', to: 'sessions#checkout'
   
-  resources :users, only: [:show] do
+  resources :users, only: [:show, :edit, :update] do
     # nested routes
     resources :carts, only: [:show]
   end

@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     end
 
     def edit
-
+        current_user
     end
 
     def update
