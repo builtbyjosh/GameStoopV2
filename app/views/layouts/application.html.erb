@@ -18,21 +18,17 @@
     <nav class="border" >
       <% if logged_in? %>
         <%= link_to 'Home', user_path(session[:user_id]) %>
-        <%= link_to 'Log Out', logout_path, method:'delete' %>      
-        
-        <br>
-        <% if !!session[:cart_id] %>
-          <%= link_to "Your Cart: #{current_cart.line_items.size} items with a value of #{current_cart.cart_total }$", user_cart_path(current_cart.id, session[:user_id]) %>
-        <% end %>
+        <%= link_to 'Log Out', logout_path, method:'delete' %>        
       <% else %>
         <%= link_to 'Login', login_path %> <%= link_to 'Sign Up', signup_path %>
       <% end %> 
       <%= link_to 'View Games', games_path %> 
+      <% if !!session[:cart_id] %>
+        <%= link_to "Your Cart: #{current_cart.line_items.size} items with a value of #{current_cart.cart_total }$", user_cart_path(current_cart.id, session[:user_id]) %>
+      <% end %>
     </nav>
   </div>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
   
   <div class="border">
     <% flash.each do |type, msg| %>
