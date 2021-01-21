@@ -6,11 +6,7 @@ class GamesController < ApplicationController
     def show
         @line_item = LineItem.new
         @game = Game.find_by(id: params[:id])
-        if @game
-            render :show
-        else
-            redirect_to games_path
-        end
+        redirect_to games_path unless @game
     end
 
     def fps
