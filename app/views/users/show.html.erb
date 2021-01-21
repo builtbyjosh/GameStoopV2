@@ -1,9 +1,9 @@
 
 
-<h1>Player <%=@user.username%>'s Home Page</h1>
-
+<h1>Player <%=current_user.username%>'s Home Page</h1>
+<p>Email: <%= current_user.email%></p>
 <%= link_to 'Edit Your Profile', edit_user_path(current_user) %>
+<br>
 
-
-<p>Your Game Library</p>
+<h3>Your Game Library</h3>
 <%= render partial: '/users/game_library' %>
