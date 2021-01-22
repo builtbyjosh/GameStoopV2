@@ -9,9 +9,5 @@ class CartsController < ApplicationController
         end  
     end
 
-    private
 
-    def cart_params
-        params.require(:cart).permit(:total)
-    end
 end
