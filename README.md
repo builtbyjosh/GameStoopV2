@@ -1,24 +1,23 @@
-# README
+# GameStoopV2
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+GameStoopV2 is a simple online store developed with Ruby On Rails. It implements a carts system that is tied to a user. And uses sessions to create new carts. It also utilizes 3rd party authentication using Omniauth-github.
 
-Things you may want to cover:
+Active admin has also been used for the creation of new game objects. You will need to navigate to localhost:3000/admin to login. There is a default admin user created in the seeds file.  
 
-* Ruby version
+## Installation
 
-* System dependencies
+Use the terminal to install GameStoopV2.
 
-* Configuration
+```bash
+bundle install
+```
+To use the Omniauth-github gem, make sure to create your own .env file and store the Github key and secret in there. 
 
-* Database creation
 
-* Database initialization
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-* How to run the test suite
+Please make sure to update tests as appropriate.
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
