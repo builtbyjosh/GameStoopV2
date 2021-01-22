@@ -22,7 +22,8 @@ Specs:
     - Made through the sessions controller
 - [x] Include logout (how e.g. Devise)
     - Made through the sessions controller
-- [ ] Include third party signup/login (how e.g. Devise/OmniAuth)
+- [x] Include third party signup/login (how e.g. Devise/OmniAuth)
+    - Used omniauth and omniauth-github to signin/login through github
 - [x] Include nested resource show or index (URL e.g. users/2/recipes)
     - cart view is nested under the user route (users/:user_id/carts/:cart_id)
 - [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
