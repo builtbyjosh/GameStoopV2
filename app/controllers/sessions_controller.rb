@@ -19,18 +19,44 @@ class SessionsController < ApplicationController
       new_user
     end
   
+    # def success
+    #   binding.pry
+    #   @user = User.find_by(email: params[:user][:email])
+    #   if @user && @user.authenticate(user_params[:password])
+    #     set_user(@user)
+    #     current_cart
+    #     redirect_to user_path(@user)
+    #   else
+    #     flash[:errors] = "Invalid Email or Password"
+    #     new_user
+    #     render :login
+    #   end
+    # end
+
     def success
-      binding.pry
-      @user = User.find_by(email: params[:user][:email])
-      if @user && @user.authenticate(user_params[:password])
+      if request.env["omniauth.auth"]  
+        @user = User.find_by(uid: request.env["omniauth.auth"]["uid"])
+        if @user.nil?
+            @user = User.create(username: request.env["omniauth.auth"]["info"]["nickname"], uid: request.env["omniauth.auth"]["uid"], password: "github")
+        end
         set_user(@user)
-        current_cart
         redirect_to user_path(@user)
-      else
-        flash[:errors] = "Invalid Email or Password"
-        new_user
-        render :login
-      end
+    else
+        @user = User.find_by(username: params[:username])
+        if !@user
+            @error = "Account not found. Please try again."
+            render :new
+        elsif !@user.authenticate(params[:password])
+            @error = "Password incorrect. Please try again."
+            render :new
+        else
+            # if it does, "log them in" with the session hash
+            # and redirect them to a meaningful place
+            set_user(@user)
+            redirect_to sequences_path
+        # otherwise, re render the login form, displaying a meaningful error
+        end
+    end
     end
   
     def logout
