@@ -4,4 +4,7 @@
 
 <p>Your one stop shop for new and used video games</p>
 
-<%= link_to "Log in with Github", '/auth/github', method: :post %>
+<% if !logged_in? %>    
+    <%= link_to 'Login', login_path %> <%= link_to 'Sign Up', signup_path %>
+    <%= link_to "Log in with Github", '/auth/github', method: :post %>
+<% end %>

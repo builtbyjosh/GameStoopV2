@@ -15,13 +15,8 @@
   <body>
 
   <div >
-    <nav class="border" >
-      <% if logged_in? %>
-        <%= link_to 'Home', user_path(session[:user_id]) %>
-        <%= link_to 'Log Out', logout_path, method:'delete' %>        
-      <% else %>
-        <%= link_to 'Login', login_path %> <%= link_to 'Sign Up', signup_path %>
-      <% end %> 
+    <nav class="border" >     
+      <%= link_to 'Home', user_path(session[:user_id]) %> 
       <%= link_to 'View Games', games_path %> 
       <% if !!session[:cart_id] %>
         <%= link_to "Your Cart: #{current_cart.line_items.size} items with a value of #{current_cart.cart_total }$", user_cart_path(current_cart.id, session[:user_id]) %>
@@ -38,6 +33,9 @@
     <% end %>
         
     <%= yield %>
+    <% if logged_in? %>
+    <%= link_to 'Log Out', logout_path, method:'delete' %>
+    <% end %>  
   </div>
   
 
