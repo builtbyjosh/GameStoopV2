@@ -42,22 +42,22 @@ class SessionsController < ApplicationController
         set_user(@user)
         redirect_to user_path(@user)
     else
-        @user = User.find_by(username: params[:username])
+        @user = User.find_by(username: params[:user][:username])        
         if !@user
+          binding.pry
             @error = "Account not found. Please try again."
-            render :new
-        elsif !@user.authenticate(params[:password])
+            new_user
+            redirect_to login_path
+        elsif !@user.authenticate(params[:user][:password])          
             @error = "Password incorrect. Please try again."
-            render :new
-        else
-            # if it does, "log them in" with the session hash
-            # and redirect them to a meaningful place
+            new_user
+            redirect_to login_path
+        else          
             set_user(@user)
-            redirect_to sequences_path
-        # otherwise, re render the login form, displaying a meaningful error
+            redirect_to user_path(current_user.id)
         end
     end
-    end
+  end
   
     def logout
       session.clear
@@ -83,4 +83,4 @@ class SessionsController < ApplicationController
     def set_user(user)
       session[:user_id] = user.id
     end
-  end
+end
