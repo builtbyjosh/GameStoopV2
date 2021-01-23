@@ -1,7 +1,5 @@
 class GamesController < ApplicationController
-    def index
-        @games = Game.all
-    end
+
 
     def show
         @line_item = LineItem.new
@@ -10,6 +8,7 @@ class GamesController < ApplicationController
     end
 
     def fps
+
         @games = Game.fps
         render :index
     end
@@ -27,5 +26,10 @@ class GamesController < ApplicationController
     def platformer
         @games = Game.platformer
         render :index
+    end
+
+    def index
+    
+        @games = Game.all
     end
 end

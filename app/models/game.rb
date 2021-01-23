@@ -5,4 +5,6 @@ class Game < ApplicationRecord
     scope :strategy, -> { where(genre: "strategy") }
     scope :simulation, -> { where(genre: "simulation") }
     scope :platformer, -> { where(genre: "platformer") }
+
+    
 end

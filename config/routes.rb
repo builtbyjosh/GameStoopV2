@@ -26,6 +26,13 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#logout'
   get '/checkout', to: 'sessions#checkout'
   post '/checkout', to: 'sessions#checkout'
+
+  # scope method routes
+  get '/games/fps', to: 'games#fps'
+  get '/games/strategy', to: 'games#strategy'
+  get '/games/simulation', to: 'games#simulation'
+  get '/games/platformer', to: 'games#platformer'
+
   
   resources :users, only: [:show, :edit, :update] do
     # nested routes
@@ -38,11 +45,6 @@ Rails.application.routes.draw do
     resources :line_items, only: [:new, :create]
   end  
 
-  # scope method routes
-  get '/games/fps', to: 'games#fps'
-  get '/games/strategy', to: 'games#strategy'
-  get '/games/simulation', to: 'games#simulation'
-  get '/games/platformer', to: 'games#platformer'
 
   
 end

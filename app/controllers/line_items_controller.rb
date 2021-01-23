@@ -1,5 +1,5 @@
 class LineItemsController < ApplicationController
-  before_action :require_login
+  
   
   def index
     @line_items = LineItem.all
