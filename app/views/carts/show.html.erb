@@ -2,7 +2,7 @@
 
 <% current_cart.line_items.each do |line_item| %>
 <p><strong>Game:</strong> <%= line_item.game.name %></p>
-<p><strong>Quantity:</strong> $<%= line_item.quantity %></p>
+<p><strong>Quantity:</strong> <%= line_item.quantity %></p>
 <p><strong>Price:</strong> $<%= line_item.game.price %></p>
 <p><strong>Subtotal:</strong> $<%= line_item.subtotal %></p>
 <%= button_to "Remove From Cart", line_item_path(line_item), method: :delete %>
@@ -10,5 +10,9 @@
 <% end %>
 
 <h3><strong>Total:</strong> $<%= current_cart.cart_total %></h3>
+<br>
 <%= button_to "Checkout", checkout_path %>
-<%= button_to 'Continue Shopping', games_path %>
+<br>
+<%= link_to 'Continue Shopping', games_path %>
+<br>
+<br>
