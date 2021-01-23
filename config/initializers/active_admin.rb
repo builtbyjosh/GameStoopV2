@@ -54,7 +54,7 @@ ActiveAdmin.setup do |config|
   #
   # This setting changes the method which Active Admin calls
   # within the application controller.
-  # config.authentication_method = :authenticate_admin_user!
+  config.authentication_method = :authenticate_admin_user!
 
   # == User Authorization
   #
@@ -230,12 +230,12 @@ ActiveAdmin.setup do |config|
   #
   # To change the default utility navigation to show a link to your website & a logout btn
   #
-    config.namespace :admin do |admin|
-      admin.build_menu :utility_navigation do |menu|
-        menu.add label: "GameStoop", url: "http://localhost:3000", html_options: { target: :blank }
-        admin.add_logout_button_to_menu menu
-      end
-    end
+    # config.namespace :admin do |admin|
+    #   admin.build_menu :utility_navigation do |menu|
+    #     menu.add label: "GameStoop", url: "http://localhost:3000", html_options: { target: :blank }
+    #     admin.add_logout_button_to_menu menu
+    #   end
+    # end
   #
   # If you wanted to add a static menu item to the default menu provided:
   #
