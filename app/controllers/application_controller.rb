@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    helper_method :current_user, :logged_in?, :current_cart
+    helper_method :current_user, :logged_in?, :current_cart, :require_login
     add_flash_types :error
     before_action :current_cart
 
